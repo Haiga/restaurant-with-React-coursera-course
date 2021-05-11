@@ -1,8 +1,9 @@
-import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/MenuComponent';
-//import './App.css';
+import './App.css';
 import { DISHES } from './shared/dishes'
 import { Component } from 'react';
+import Header from './components/HeaderComponent'
+import Footer from './components/FooterComponent'
 
 class App extends Component {
   constructor(props) {
@@ -15,14 +16,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">
-              Something ...
-            </NavbarBrand>
-          </div>
-        </Navbar>
+        <Header/>
         <Menu dishes={this.state.dishes} />
+        <Footer/>
       </div>
     );
   }
