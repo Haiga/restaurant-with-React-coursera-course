@@ -55,10 +55,9 @@ class Contact extends Component {
             errors.lastname = "Last name <= 10 characters";
         }
 
-        const reg = /^\d+%/;
-        if (this.state.touched.telnum && !reg.test(telnum)) {
-            errors.telnum = "Tel number should contain only numbers";
-        }
+        const reg = /^\d+$/;
+        if (this.state.touched.telnum && !reg.test(telnum))
+            errors.telnum = 'Tel. Number should contain only numbers';
 
         if (this.state.touched.email && email.split('').filter(x => x === '@').length !== 1) {
             errors.email = "Email invalid";
