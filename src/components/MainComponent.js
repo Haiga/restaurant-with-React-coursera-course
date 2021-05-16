@@ -9,9 +9,13 @@ import DishDetail from './DishDetailComponent';
 import About from './AboutComponent';
 import { connect } from 'react-redux';
 import { ConfigureStore } from '../redux/configureStore';
-
+import { addComment } from '../redux/ActionCreators'
 
 const store = ConfigureStore();
+
+const mapDispatchToProps = (dispatch) => ({
+    
+});
 
 const mapStateToProps = state => {
     return {

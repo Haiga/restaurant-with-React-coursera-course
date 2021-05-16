@@ -1,11 +1,9 @@
-import { PROMOTIONS } from '../shared/dishes';
+import { PROMOTIONS } from '../shared/promotions';
 
 
 export const Promotions = (state = PROMOTIONS, action) => {
     switch (action.type) {
         default:
             return state;
-        default:
-            break;
     }
 }
