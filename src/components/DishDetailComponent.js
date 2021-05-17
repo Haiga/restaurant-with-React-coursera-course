@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
-
+import { Loading } from './LoadingComponent';
 
 function RenderDish({ dish }) {
     return (
@@ -22,7 +22,6 @@ function RenderDish({ dish }) {
 }
 
 function RenderComments({ comments, addComment, dishId }) {
-    // console.log(comments)
     if (comments != null) {
 
         let list = comments.map((comments) => {
@@ -59,6 +58,24 @@ function RenderComments({ comments, addComment, dishId }) {
 }
 
 const DishDetail = (props) => {
+    if (props.isLoading) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <Loading></Loading>
+                </div>
+            </div> 
+        );
+    }
+    if (props.errMess) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <h4>{props.errMess}</h4>
+                </div>
+            </div> 
+        );
+    }
     if (props.dish != null) {
         return (
             <div className="container">
@@ -109,14 +126,12 @@ class CommentForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // 弹窗按钮
     toggleModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         });
     }
 
-    // 提交评论
     handleSubmit(values) {
 
         this.toggleModal();

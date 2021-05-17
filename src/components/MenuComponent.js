@@ -2,26 +2,17 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import DishDetail from './DishDetailComponent';
 import { Link } from 'react-router-dom';
+import { Loading } from './LoadingComponent';
 
 class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //selectedDish: null
     };
   }
 
-
-  //onDishSelect(dish) {
-  //  this.setState({ selectedDish: dish });
-  //}
-
-  //renderDish(dish) {
-  //  return (<DishDetail dish={dish} />);
-  //}
-
   render() {
-    const menu = this.props.dishes.map((dish) => {
+    const menu = this.props.dishes.dishes.map((dish) => {
       return (
         <div key={dish.id} className="col-12 col-md-5 m-1">
           <Card>
@@ -35,6 +26,25 @@ class Menu extends Component {
         </div>
       );
     });
+
+    if (this.props.dishes.isLoading) {
+      return (
+        <div className="container">
+          <div className="row">
+            <Loading></Loading>
+          </div>
+        </div>
+      );
+    }
+    if (this.props.dishes.errMess) {
+      return (
+        <div className="container">
+          <div className="row">
+            <h4>{this.props.dishes.errMess}</h4>
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div className="container">
@@ -51,7 +61,7 @@ class Menu extends Component {
         <div className="row">
           {menu}
         </div>
-        
+
       </div>
     );
   }
