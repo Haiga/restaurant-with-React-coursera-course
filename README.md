@@ -1,3 +1,8 @@
+#Running server local to see use with this application
+
+Install json-server with np,
+json-server --watch db.json 2000 -p 3001
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
