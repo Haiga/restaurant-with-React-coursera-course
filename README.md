@@ -1,4 +1,9 @@
-#Running server local to see use with this application
+# Application developed in course Front-end with react
+
+See more on coursera:
+www.coursera.org/learn/front-end-react
+
+## Running server local to see use with this application
 
 Install json-server with np,
 json-server --watch db.json 2000 -p 3001
