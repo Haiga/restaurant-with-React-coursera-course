@@ -3,9 +3,10 @@
 See more on coursera:
 www.coursera.org/learn/front-end-react
 
-## Running server local to see use with this application
+## Running server local to use with this application
 
-Install json-server with np,
+Install json-server with npm
+
 json-server --watch db.json 2000 -p 3001
 
 # Getting Started with Create React App
