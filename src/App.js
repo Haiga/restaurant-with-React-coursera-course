@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 import Main from './components/MainComponent'
 

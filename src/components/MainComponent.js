@@ -4,7 +4,7 @@ import Menu from './MenuComponent';
 import { Component } from 'react';
 import Header from './HeaderComponent'
 import Footer from './FooterComponent'
-import { Switch, Route, Redirect, BrowserRouter, withRouter } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import DishDetail from './DishDetailComponent';
 import About from './AboutComponent';
 import { connect } from 'react-redux';
@@ -33,9 +33,6 @@ const mapStateToProps = state => {
 
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         this.props.fetchDishes();
