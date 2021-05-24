@@ -7,6 +7,10 @@ www.coursera.org/learn/front-end-react
 
 Install json-server with npm
 
+## Build the application and use the build folder generated
+
+npm run build
+
 json-server --watch db.json 2000 -p 3001
 
 # Getting Started with Create React App
